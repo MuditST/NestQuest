@@ -15,12 +15,7 @@ import { useState } from 'react';
 
 const Explore = () => {
   const router = useRouter();
-  const icons = [
-    <BsTwitter />,
-    <BsInstagram />,
-    <BsFacebook />,
-    <FaSnapchatGhost />,
-  ];
+  
   const [message,setMessage] = useState([
     {sender: "user", message: "Hello, how are you?"},
     {sender: "bot", message: "I am fine. How are you?"},

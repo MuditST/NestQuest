@@ -21,8 +21,8 @@ const Rentals = () => {
   return (
     <div className="py-3 sm:py-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10 ">
-        {rentals.map((rental) => (
-          <div className="rental-card">
+        {rentals.map((rental, i) => (
+          <div key={i} className="rental-card">
           <a href={`http://${rental.URL}`} target="_blank" className="card-link">
             <div className="relative">
               <div className="grad absolute w-full h-full rounded-b-[1.3rem]"></div>
