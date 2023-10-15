@@ -1,0 +1,30 @@
+.rental-card-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .rental-card-inner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .rental-description {
+    padding: 1rem;
+    background-color: #fff;
+    border-top-left-radius: 1.3rem;
+    border-top-right-radius: 1.3rem;
+  }
+  
+  .rental-description h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .rental-description p {
+    font-size: 0.9rem;
+    color: #777;
+  }
