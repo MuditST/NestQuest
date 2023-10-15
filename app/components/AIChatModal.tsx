@@ -21,7 +21,7 @@ const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageD
     }
 
     const processMessageToChatGPT = async(chatMessages:any) => { 
-        const API_KEY = "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"
+        const API_KEY = "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"
         const systemMessage = { 
             "role": "system", "content": "As a seasoned realtor with 30+ years of experience, offer expert insights on this property: prime location and great value. Answer in 30 words or less."
         }
