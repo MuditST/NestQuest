@@ -1,17 +1,14 @@
 import { useState } from "react";
 
 const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageData }) => {
-    // make this a typical chat modal with a close button
-    // and a chatbot that can answer questions
-    // and a text input field
-    // and a send button
+  
 
     const [currentMessage, setCurrentMessage] = useState("");
 
     const sendMessage = async (event) => {
         event.preventDefault();
 
-        // add current message to messages array
+      
         if (currentMessage === "") {
             return;
         }
@@ -20,20 +17,16 @@ const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageD
         setCurrentMessage("");
         await processMessageToChatGPT([...messageData, { sender: "user", message: currentMessage }]);
 
-        // send message to backend
-        // receive response from backend
-        // add response to messages array and render
+    
     }
 
-    const processMessageToChatGPT = async(chatMessages) => { // messages is an array of messages
-        const API_KEY = "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";
-        const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
+    const processMessageToChatGPT = async(chatMessages) => { 
+        const API_KEY = "sk-EpVny5CunkXyWLaYk5SzT3BlbkFJcCjV2PdUSBIAo9yRZ"
+        const systemMessage = { 
             "role": "system", "content": "As a seasoned realtor with 30+ years of experience, offer expert insights on this property: prime location and great value. Answer in 30 words or less."
         }
 
-        // Format messages for chatGPT API
-        // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-        // So we need to reformat
+        
     
         let apiMessages = chatMessages.map((messageObject) => {
           let role = "";
@@ -46,14 +39,12 @@ const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageD
         });
     
     
-        // Get the request body set up with the model we plan to use
-        // and the messages which we formatted above. We add a system message in the front to'
-        // determine how we want chatGPT to act. 
+        
         const apiRequestBody = {
           "model": "gpt-3.5-turbo",
           "messages": [
-            systemMessage,  // The system message DEFINES the logic of our chatGPT
-            ...apiMessages // The messages from our chat with ChatGPT
+            systemMessage,  
+            ...apiMessages 
           ]
         }
     
@@ -78,7 +69,7 @@ const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageD
 
     return (
         <div className={`w-[350px] h-[60vh] shadow-sm fixed bottom-20 z-50 bg-white right-10 shadow-gray-700 ${visible ? 'block' : 'hidden'}`}>
-            {/* heading and close button */}
+          
             <div className="flex flex-row justify-between items-center bg-emerald-700">
                 <h1 className="text-2xl font-bold text-white px-2 py-2">Chatbot</h1>
                 <button className="pr-2 text-2xl font-bold text-white" onClick={() => setVisible(!visible)}>X</button>

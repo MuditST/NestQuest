@@ -19,7 +19,7 @@ const Landing = () => {
       {/* title */}
       <div className="lg:w-1/2 w-full bg-white">
         <div className="flex flex-col justify-center items-center h-screen relative">
-          <h1 className="text-8xl text-emerald-900 font-bold text-center">Next Quest</h1>
+          <h1 className="text-8xl text-emerald-900 font-bold text-center">Nest Quest</h1>
           <p className="text-2xl mt-4 text-emerald-900 font-light">
             The only way to find a place
           </p>

@@ -86,11 +86,10 @@ const [openChat, setOpenChat] = useState(false)
       </div>
       <div className="bg-white border-t-2 shadow-md  shadow-gray-300 sticky bottom-0 h-20 w-full flex items-center justify-center gap-6">
         
-      {icons.map((icon) => (
-        <div className="ml-16 text-[30px] text-emerald-700 hover:text-black duration-100 ease-out ">
-          {icon}
-        </div>
-      ))}
+      <BsTwitter className="ml-16 text-[30px] text-emerald-700 hover:text-black duration-100 ease-out " />
+    <BsInstagram className="ml-16 text-[30px] text-emerald-700 hover:text-black duration-100 ease-out " />
+    <BsFacebook className="ml-16 text-[30px] text-emerald-700 hover:text-black duration-100 ease-out " />
+    <FaSnapchatGhost className="ml-16 text-[30px] text-emerald-700 hover:text-black duration-100 ease-out " />
       <div onClick={()=> {
         setOpenChat(!openChat)
       }} className=" ml-auto flex cursor-pointer items-center border mr-8 px-3 py-2 rounded-md gap-2 bg-emerald-700 text-white font-bold hover:bg-emerald-800 duration-100 ease-out">
