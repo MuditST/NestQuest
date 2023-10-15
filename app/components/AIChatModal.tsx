@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageData }) => {
+const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageData }: { setVisible: any; visible: boolean; messageData: any; setMessageData: any;}) => {
   
 
     const [currentMessage, setCurrentMessage] = useState("");
 
-    const sendMessage = async (event) => {
+    const sendMessage = async (event:any) => {
         event.preventDefault();
 
       
@@ -20,15 +20,15 @@ const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageD
     
     }
 
-    const processMessageToChatGPT = async(chatMessages) => { 
-        const API_KEY = "sk-EpVny5CunkXyWLaYk5SzT3BlbkFJcCjV2PdUSBIAo9yRZ"
+    const processMessageToChatGPT = async(chatMessages:any) => { 
+        const API_KEY = "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"
         const systemMessage = { 
             "role": "system", "content": "As a seasoned realtor with 30+ years of experience, offer expert insights on this property: prime location and great value. Answer in 30 words or less."
         }
 
         
     
-        let apiMessages = chatMessages.map((messageObject) => {
+        let apiMessages = chatMessages.map((messageObject:any) => {
           let role = "";
           if (messageObject.sender === "bot") {
             role = "assistant";
@@ -76,7 +76,7 @@ const AIChatModal = ({ setVisible, visible = true, messageData = [], setMessageD
             </div>
 
             <div className="w-full h-[50vh] overflow-y-auto p-2">
-                {messageData.map((message, index) => {
+                {messageData.map((message:any, index:any) => {
                     return (
                         <div key={index} className="my-1">
                             <div className={`${message.sender === "user" ? 'bg-emerald-100 text-right' : 'bg-gray-200'} rounded-md px-2 py-3`} style={{ wordWrap: 'break-word' }}>
